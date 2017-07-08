@@ -4,17 +4,27 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.gabriel.muxixi.data.remote.FruitsRestService;
 import br.com.gabriel.muxixi.data.remote.model.Fruit;
 import br.com.gabriel.muxixi.data.remote.model.Fruits;
+import okhttp3.MediaType;
+import okhttp3.ResponseBody;
+import retrofit2.Response;
+import retrofit2.adapter.rxjava.HttpException;
 import rx.Observable;
 import rx.observers.TestSubscriber;
 
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -77,5 +87,27 @@ public class FruitsRepositoryImplTest {
         fruit.setFruits(listFruits);
         return fruit;
     }
+
+    @Test
+    public void listFruits_IOException() {
+        //Given
+        when(fruitsRestService.listFruits())
+                .thenReturn(getIOExceptionError(), Observable.just(githubUserList()));
+
+        //When
+        TestSubscriber<List<Fruits>> subscriber = new TestSubscriber<>();
+        fruitsRepository.listFruits().subscribe(subscriber);
+
+        //Then
+        subscriber.awaitTerminalEvent();
+        subscriber.assertNoErrors();
+
+        verify(fruitsRestService, times(2)).listFruits();
+    }
+
+    private Observable getIOExceptionError() {
+        return Observable.error(new IOException());
+    }
+
 
 }
