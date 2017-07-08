@@ -31,12 +31,7 @@ android {
         }
     }
     productFlavors {
-        prod {
 
-        }
-        mock {
-            applicationId "br.com.gabriel.muxixi.mock"
-        }
     }
     compileOptions {
         targetCompatibility 1.8
