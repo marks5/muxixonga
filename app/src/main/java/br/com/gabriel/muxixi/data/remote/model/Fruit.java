@@ -14,6 +14,14 @@ public class Fruit implements Parcelable
     @SerializedName("fruits")
     @Expose
     private List<Fruits> fruits = null;
+
+    public Fruit() {
+    }
+
+    public Fruit(List<Fruits> fruits) {
+        this.fruits = fruits;
+    }
+
     public final static Parcelable.Creator<Fruit> CREATOR = new Creator<Fruit>() {
 
 

@@ -19,6 +19,16 @@ public class Fruits implements Parcelable
     @SerializedName("price")
     @Expose
     private Double price;
+
+    public Fruits() {
+    }
+
+    public Fruits(String name, String image, Double price) {
+        this.name = name;
+        this.image = image;
+        this.price = price;
+    }
+
     public final static Parcelable.Creator<Fruits> CREATOR = new Creator<Fruits>() {
 
 
