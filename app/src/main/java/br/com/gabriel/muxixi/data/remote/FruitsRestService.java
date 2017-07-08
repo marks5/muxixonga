@@ -1,6 +1,5 @@
 package br.com.gabriel.muxixi.data.remote;
 
-import br.com.gabriel.muxixi.model.Fruit;
 import retrofit2.http.GET;
 import rx.Observable;
 
