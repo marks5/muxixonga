@@ -2,6 +2,7 @@ package br.com.gabriel.muxixi.presentation.fruits;
 
 import java.util.List;
 
+import br.com.gabriel.muxixi.data.remote.model.Fruit;
 import br.com.gabriel.muxixi.data.remote.model.Fruits;
 import br.com.gabriel.muxixi.presentation.base.MvpPresenter;
 import br.com.gabriel.muxixi.presentation.base.MvpView;
@@ -12,6 +13,8 @@ import br.com.gabriel.muxixi.presentation.base.MvpView;
 
 public interface ListFruitsContract {
     interface View extends MvpView {
+        void remountResults(List<Fruits> fruits);
+
         void showResults(List<Fruits> fruits);
 
         void showError(String message);
@@ -23,5 +26,7 @@ public interface ListFruitsContract {
 
     interface Presenter extends MvpPresenter<View> {
         void listFruits();
+
+        void remountListFruits(List<Fruits> fruits);
     }
 }

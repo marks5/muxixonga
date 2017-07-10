@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.gabriel.muxixi.R;
+import br.com.gabriel.muxixi.data.remote.model.Fruit;
 import br.com.gabriel.muxixi.data.remote.model.Fruits;
 import br.com.gabriel.muxixi.injection.Injection;
 import rx.android.schedulers.AndroidSchedulers;
@@ -23,6 +25,8 @@ public class ListFruitsActivity extends AppCompatActivity implements ListFruitsC
     private ProgressBar progressBar;
     private TextView error_msg;
     private RecyclerView rv_fruits;
+
+    private ArrayList<Fruits> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +41,20 @@ public class ListFruitsActivity extends AppCompatActivity implements ListFruitsC
         listFruitAdapter = new ListFruitsAdapter(null);
         GridLayoutManager glm = new GridLayoutManager(this, 2);
         rv_fruits.setLayoutManager(glm);
-
         rv_fruits.setAdapter(listFruitAdapter);
 
-        listFruitsPresenter.listFruits();
+        if(savedInstanceState == null) {
+            listFruitsPresenter.listFruits();
+        }else{
+            listFruitsPresenter.remountListFruits(items = savedInstanceState.getParcelableArrayList("arrayfruits"));
+        }
     }
 
     @Override
     public void showResults(List<Fruits> fruits) {
         rv_fruits.setVisibility(View.VISIBLE);
         error_msg.setVisibility(View.GONE);
+        items.addAll(fruits);
         listFruitAdapter.setItems(fruits);
     }
 
@@ -75,5 +83,18 @@ public class ListFruitsActivity extends AppCompatActivity implements ListFruitsC
     protected void onDestroy() {
         super.onDestroy();
         listFruitsPresenter.detachView();
+    }
+
+    @Override
+    public void remountResults(List<Fruits> fruits) {
+        rv_fruits.setVisibility(View.VISIBLE);
+        error_msg.setVisibility(View.GONE);
+        listFruitAdapter.setItems(fruits);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putParcelableArrayList("arrayfruits",items);
+        super.onSaveInstanceState(outState);
     }
 }

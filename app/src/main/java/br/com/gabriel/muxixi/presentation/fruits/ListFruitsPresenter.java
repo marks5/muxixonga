@@ -3,6 +3,7 @@ package br.com.gabriel.muxixi.presentation.fruits;
 import java.util.List;
 
 import br.com.gabriel.muxixi.data.FruitsRepository;
+import br.com.gabriel.muxixi.data.remote.model.Fruit;
 import br.com.gabriel.muxixi.data.remote.model.Fruits;
 import br.com.gabriel.muxixi.presentation.base.BasePresenter;
 import rx.Scheduler;
@@ -45,5 +46,12 @@ public class ListFruitsPresenter extends BasePresenter<ListFruitsContract.View> 
                 getView().showResults(fruitses);
             }
         }));
+    }
+
+    @Override
+    public void remountListFruits(List<Fruits> fruits) {
+        checkViewAttached();
+        getView().hideLoading();
+        getView().remountResults(fruits);
     }
 }
