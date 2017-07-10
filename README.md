@@ -27,9 +27,11 @@ Pensando nisso tive que tirar estes dias em que não trabalho (fim_de_semana) pa
 
 - Voltei atrás e deixei sem flavors mesmo:
 * Para testes unitários:
- 1. Vá até a pasta tests dentro dela você encontra alguns arquivos chamados FruitsRepositoryImplTest e ListFruitsPresenterTest, pode clicar com o botão direito neles e pode dar run test with coverage. (caso não dê pra rodar por conta do Parcelable limpe o cache do AndroidStudio).
+ 1. Vá até a pasta tests dentro dela você encontra alguns arquivos chamados FruitsRepositoryImplTest e ListFruitsPresenterTest, pode clicar com o botão direito neles e pode dar run test. (caso não dê pra rodar por conta do Parcelable limpe o cache do AndroidStudio).
 
 * Para testes de UI:
+- Testes de UI em base, são feitos com Mock para garantir que o objeto esteja lá não importando o que.
+- Meu último push contém testes que passarão com Injection prod apenas. Se não quiser testar com o Mock pule a primeira parte.
  1. Primeiro, altere a classe de Injection para InjectionMock em ListFruitsActivity:
     listFruitsPresenter = new ListFruitsPresenter(Injection.provideListFruits(), Schedulers.io(), AndroidSchedulers.mainThread());
  2. Vá até a pasta androidTestMock dentro de androidTests, clique com botão direito em ListFruitActivityTest e dê run neste arquivo.
