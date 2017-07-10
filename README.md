@@ -7,7 +7,7 @@ Era necessário então com o pouco tempo focar ou na integração com C ou no de
 
 Pensando nisso tive que tirar estes dias em que não trabalho (fim_de_semana) para estudar e aplicar o conceito de MVP com testes.
 
-* Do MVP
+# Do MVP
 - Classes providers utilizando Retrofit e Picasso com cache.
 - As activities possuem todos métodos que são chamados do presenter mesmo quando estão em transição de estado (outBundle) ou de telas.
 1. Por falar em transição de telas, optei por uso de Parceler (já trabalho há algum tempo), a implementação pode ser chata mas se ponderarmos entre Serializable e Parcelable a velocidade em que é trafegado os dados com o uso Parceler é absurdamente maior que Serializable.
