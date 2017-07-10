@@ -26,10 +26,10 @@ Pensando nisso tive que tirar estes dias em que não trabalho (fim_de_semana) pa
 - Criei flavors para testes no início do projeto entretanto, o PC já não aguentava mais com variações de 40 ~~ 90 minutos o build.
 
 - Voltei atrás e deixei sem flavors mesmo:
-  * Para testes unitários:
+* Para testes unitários:
    1. Vá até a pasta tests dentro dela você encontra alguns arquivos chamados FruitsRepositoryImplTest e ListFruitsPresenterTest, pode clicar com o botão direito neles e pode dar run test with coverage. (caso não dê pra rodar por conta do Parcelable limpe o cache do AndroidStudio).
 
-  * Para testes de UI:
+* Para testes de UI:
    1. Primeiro, altere a classe de Injection para InjectionMock em ListFruitsActivity:
     listFruitsPresenter = new ListFruitsPresenter(Injection.provideListFruits(), Schedulers.io(), AndroidSchedulers.mainThread());
    2. Vá até a pasta androidTestMock dentro de androidTests, clique com botão direito em ListFruitActivityTest e dê run neste arquivo.
