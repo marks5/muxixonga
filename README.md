@@ -17,4 +17,14 @@ Pensando nisso tive que tirar estes dias em que não trabalho (fim_de_semana) pa
 - Classes de injeções feitas sem o uso de Dagger (tenho que dar uma lida sobre).
 - Tentei fazer a integração do C mas não deu muito certo a ideia de tratar a recursividade para cuidar de uma Thread.
 
+# Sobre testes
+- Criei flavors para testes no início do projeto entretanto, o PC já não aguentava mais com variações de 40 ~~ 90 minutos o build.
+- Voltei atrás e deixei sem flavors mesmo:
+  * Para testes unitários:
+  1. Abra a aba Terminal e rode o seguinte comando: gradlew test ou ./gradlew test. Por alguma razão o JUnit tem alguma incompatibilidade com Parcelable.
+  * Para testes de UI:
+  1. Primeiro, altere a classe de Injection para InjectionMock em ListFruitsActivity:
+    listFruitsPresenter = new ListFruitsPresenter(Injection.provideListFruits(), Schedulers.io(), AndroidSchedulers.mainThread());
+  2. Vá até a pasta androidTestMock dentro de androidTests, clique com botão direito em ListFruitActivityTest e dê run neste arquivo.
+
 ** adicionar mais conteúdo
