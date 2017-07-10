@@ -5,7 +5,7 @@
 Atualmente não trabalho com MVP mas sempre gostei da aplicabilidade deste por conta dos testes, código com qualidade só com testes. 
 Era necessário então com o pouco tempo focar ou na integração com C ou no desenvolvimento de MVP que se alinha com testes, portanto, optei pelo desenvolvimento do MVP. 
 
-Pensando nisso tive que tirar estes dias em que não trabalho para estudar e aplicar o conceito de MVP com testes.
+Pensando nisso tive que tirar estes dias em que não trabalho (fim_de_semana) para estudar e aplicar o conceito de MVP com testes.
 
 * Do MVP
 - Classes providers utilizando Retrofit e Picasso com cache.
