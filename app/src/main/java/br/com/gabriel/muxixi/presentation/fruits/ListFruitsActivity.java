@@ -15,6 +15,7 @@ import br.com.gabriel.muxixi.R;
 import br.com.gabriel.muxixi.data.remote.model.Fruit;
 import br.com.gabriel.muxixi.data.remote.model.Fruits;
 import br.com.gabriel.muxixi.injection.Injection;
+import br.com.gabriel.muxixi.injection.InjectionMock;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -32,7 +33,7 @@ public class ListFruitsActivity extends AppCompatActivity implements ListFruitsC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_fruits);
-        listFruitsPresenter = new ListFruitsPresenter(Injection.provideListFruits(), Schedulers.io(), AndroidSchedulers.mainThread());
+        listFruitsPresenter = new ListFruitsPresenter(InjectionMock.provideListFruits(), Schedulers.io(), AndroidSchedulers.mainThread());
         listFruitsPresenter.attachView(this);
 
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
