@@ -47,8 +47,8 @@ public class MockFruitsRestServiceImpl implements FruitsRestService {
         return fruit;
     }
 
-    public static void setListFruitsResult(Observable listFruitsResult) {
-        listFruitsResult = listFruitsResult;
+    public static void setListFruitsResult(Observable list) {
+        listFruitsResult = list;
     }
 
 

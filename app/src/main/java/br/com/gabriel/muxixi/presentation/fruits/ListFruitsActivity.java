@@ -33,7 +33,7 @@ public class ListFruitsActivity extends AppCompatActivity implements ListFruitsC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_fruits);
-        listFruitsPresenter = new ListFruitsPresenter(InjectionMock.provideListFruits(), Schedulers.io(), AndroidSchedulers.mainThread());
+        listFruitsPresenter = new ListFruitsPresenter(Injection.provideListFruits(), Schedulers.io(), AndroidSchedulers.mainThread());
         listFruitsPresenter.attachView(this);
 
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
