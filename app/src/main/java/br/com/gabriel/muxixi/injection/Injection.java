@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class Injection {
-    private static final String BASE_URL = "https://api.github.com";
+    private static final String BASE_URL = "https://raw.githubusercontent.com/muxidev/desafio-android/master/";
     private static OkHttpClient okHttpClient;
     private static FruitsRestService fruitsRestService;
     private static Retrofit retrofitInstance;

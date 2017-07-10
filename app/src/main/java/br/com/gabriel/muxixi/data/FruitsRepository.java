@@ -11,5 +11,4 @@ import rx.Observable;
 
 public interface FruitsRepository {
     Observable<List<Fruits>> listFruits();
-
 }

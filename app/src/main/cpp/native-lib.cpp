@@ -43,10 +43,4 @@ Java_br_com_gabriel_muxixi_NativeConvert_asyncConverteToReal(JNIEnv *env, jobjec
     callback = (*env).NewGlobalRef(instance);
 
     sa.sa_handler = handler;
-
-
-    if (sigaction (SIGALRM/*PROF*/, &sa, NULL) == -1
-        || setitimer (ITIMER_REAL/*PROF*/, &it, NULL) == -1)
-    {
-    }
 }

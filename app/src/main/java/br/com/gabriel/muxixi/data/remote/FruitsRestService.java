@@ -8,6 +8,6 @@ import rx.Observable;
  */
 
 public interface FruitsRestService {
-    @GET("/fruits.json")
+    @GET("fruits.json")
     Observable<br.com.gabriel.muxixi.data.remote.model.Fruit> listFruits();
 }
