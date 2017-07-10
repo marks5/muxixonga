@@ -14,9 +14,9 @@ Pensando nisso tive que tirar estes dias em que não trabalho (fim_de_semana) pa
 1. Por falar em transição de telas, optei por uso de Parceler (já trabalho há algum tempo), a implementação pode ser chata mas se ponderarmos entre Serializable e Parcelable a velocidade em que é trafegado os dados com o uso Parceler é absurdamente maior que Serializable.
 2. Tentei fazer com que todas as Activities possuam métodos que sejam todos testáveis mesmo com o uso de Parcelables.
 
-- Testes Unitários com: JUnit, Mockito e Powermock.
+- Testes Unitários com: JUnit, Mockito e Powermock. Testes básicos apenas para aprendizado/amostragem.
 
-- Testes de UI com: Espresso
+- Testes de UI com: Espresso, testes básicos apenas para aprendizado/amostragem.
 
 - Classes de injeções feitas sem o uso de Dagger (tenho que dar uma lida sobre).
 
