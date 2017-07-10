@@ -27,7 +27,7 @@ Pensando nisso tive que tirar estes dias em que não trabalho (fim_de_semana) pa
 
 - Voltei atrás e deixei sem flavors mesmo:
   * Para testes unitários:
-  1. Abra a aba Terminal e rode o seguinte comando: gradlew test ou ./gradlew test. Por alguma razão o JUnit tem alguma incompatibilidade com Parcelable.
+  1. Vá até a pasta tests dentro dela você encontra alguns arquivos chamados FruitsRepositoryImplTest e ListFruitsPresenterTest, pode clicar com o botão direito neles e pode dar run test with coverage. (caso não dê pra rodar por conta do Parcelable limpe o cache do AndroidStudio).
 
   * Para testes de UI:
   1. Primeiro, altere a classe de Injection para InjectionMock em ListFruitsActivity:
