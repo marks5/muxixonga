@@ -23,9 +23,8 @@ Pensando nisso tive que tirar estes dias em que não trabalho (fim_de_semana) pa
 - Tentei fazer a integração do C mas não deu muito certo a ideia de tratar a recursividade para cuidar de uma Thread.
 
 # Sobre testes
-- Criei flavors para testes no início do projeto entretanto o PC já não aguentava mais com variações de 40 ~~ 90 minutos o build.
+- Criei flavors para testes no início do projeto entretanto o PC já não aguentava mais com variações de 40 ~~ 90 minutos o build. Voltei atrás e deixei sem flavors mesmo:
 
-- Voltei atrás e deixei sem flavors mesmo:
 * Para testes unitários:
  1. Vá até a pasta tests dentro dela você encontra alguns arquivos chamados FruitsRepositoryImplTest e ListFruitsPresenterTest, pode clicar com o botão direito neles e pode dar run test. (caso não dê pra rodar por conta do Parcelable limpe o cache do AndroidStudio).
 
