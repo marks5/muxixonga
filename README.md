@@ -34,5 +34,3 @@ Pensando nisso tive que tirar estes dias em que não trabalho (fim_de_semana) pa
  1. Primeiro, altere a classe de Injection para InjectionMock em ListFruitsActivity:
     listFruitsPresenter = new ListFruitsPresenter(Injection.provideListFruits(), Schedulers.io(), AndroidSchedulers.mainThread());
  2. Vá até a pasta androidTestMock dentro de androidTests, clique com botão direito em ListFruitActivityTest e dê run neste arquivo.
-
-** adicionar mais conteúdo
