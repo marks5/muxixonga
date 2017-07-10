@@ -12,10 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.gabriel.muxixi.R;
-import br.com.gabriel.muxixi.data.remote.model.Fruit;
 import br.com.gabriel.muxixi.data.remote.model.Fruits;
 import br.com.gabriel.muxixi.injection.Injection;
-import br.com.gabriel.muxixi.injection.InjectionMock;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 

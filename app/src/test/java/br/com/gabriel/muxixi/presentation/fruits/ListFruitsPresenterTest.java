@@ -48,7 +48,7 @@ public class ListFruitsPresenterTest {
 
     @Test
     public void listFruits_ReturnsResults() {
-        Fruit fruit = getDummyUserList();
+        Fruit fruit = getDummyFruitList();
         when(fruitsRepository.listFruits()).thenReturn(Observable.<List<Fruits>>just(fruit.getFruits()));
 
         listFruitsPresenter.listFruits();
@@ -59,7 +59,7 @@ public class ListFruitsPresenterTest {
         verify(view, never()).showError(anyString());
     }
 
-    Fruit getDummyUserList() {
+    Fruit getDummyFruitList() {
         List<Fruits> fruits = new ArrayList<>();
         fruits.add(fruit1Full());
         fruits.add(fruit2Full());
@@ -89,7 +89,7 @@ public class ListFruitsPresenterTest {
     }
 
     @Test(expected = BasePresenter.MvpViewNotAttachedException.class)
-    public void search_NotAttached_ThrowsMvpException() {
+    public void list_NotAttached_ThrowsMvpException() {
         listFruitsPresenter.detachView();
 
         listFruitsPresenter.listFruits();

@@ -1,4 +1,4 @@
-package br.com.gabriel.muxixi;
+package br.com.gabriel.muxixi.util;
 
 /**
  * Created by Gabriel on 04/07/2017.

@@ -1,5 +1,7 @@
 package br.com.gabriel.muxixi.injection;
 
+import com.squareup.picasso.Picasso;
+
 import br.com.gabriel.muxixi.data.FruitsRepository;
 import br.com.gabriel.muxixi.data.FruitsRepositoryImpl;
 import br.com.gabriel.muxixi.data.remote.FruitsRestService;
@@ -18,7 +20,6 @@ public class Injection {
     private static OkHttpClient okHttpClient;
     private static FruitsRestService fruitsRestService;
     private static Retrofit retrofitInstance;
-
 
     public static FruitsRepository provideListFruits() {
         return new FruitsRepositoryImpl(provideFruitsRepo());
@@ -51,4 +52,5 @@ public class Injection {
         }
         return retrofitInstance;
     }
+
 }

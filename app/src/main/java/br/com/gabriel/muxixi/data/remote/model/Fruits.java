@@ -47,8 +47,7 @@ public class Fruits implements Parcelable
             return (new Fruits[size]);
         }
 
-    }
-    ;
+    };
 
     public String getName() {
         return name;
@@ -82,6 +81,10 @@ public class Fruits implements Parcelable
 
     public int describeContents() {
         return  0;
+    }
+
+    public Double getValueConverted(Double valueToConvert){
+        return valueToConvert * 3.5;
     }
 
 }
